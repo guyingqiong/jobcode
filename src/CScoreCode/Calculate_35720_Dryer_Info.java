@@ -58,49 +58,9 @@ public class Calculate_35720_Dryer_Info {
 				 if(G_MFG_BND_NMValue == 5) _PVAL = _PVAL + 0; 
 				 
 				 
-				 //if _warn_ ne 'U' then do; 
-				 double _X = -(-19.1068212396416 + 24.2937895113424 * _PVAL); 
-				 double P_EVENT ; 
-				 double P_NEVENT ; 
-				 int I_JCD35720 =0;
-				 if (IRUvalue != -2 && G_MFG_BND_NMValue != -2 && G_ITM_AGE2Value !=2){
-					 _X = -(-19.1068212396416 + 24.2937895113424 * _PVAL); 
+	
 				 
-				 if (_X < -23)  _PVAL = 1.0; 
-				 else if (_X > 23)  _PVAL = 0.0; 
-				 else _PVAL = 1/(1+Math.exp(_X)); 
-				 
-				 if (_PVAL < 0 ) _PVAL = 1.0; 
-				 else if(_PVAL > 1) _PVAL = 0.0; 
-				 else _PVAL = 1 - _PVAL; 
-				 
-				 P_EVENT = _PVAL; 
-				 P_NEVENT = 1-P_EVENT; 
-				 
-				 if(P_EVENT >=0.5){
-					 I_JCD35720 =1;
-				 }else I_JCD35720=0;
-					 
-				 } else{
-					 
-					 P_EVENT = 0.04503422328996; 
-					 P_NEVENT = 0.95496577671003; 
-					 I_JCD35720 = 0;  
-				 }
-				 
-				int[] _TEMPORARY_ ={1,0};
-				 int _Y =0;
-				 
-				// *** Generate dummy variables for jcd35720 ; 
- 
- 
-						    if(I_JCD35720 == 0)   
-						       _Y = 1; 
- 
-						    else if (I_JCD35720 == 0) 
-						       _Y = 0; 
-						    else  
-						       _Y = -1; 
+
  
 			 
 				 
