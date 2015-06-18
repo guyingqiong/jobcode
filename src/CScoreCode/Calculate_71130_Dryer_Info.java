@@ -13,8 +13,8 @@ public class Calculate_71130_Dryer_Info {
 				if(ProResults ==null) return  0.0105966421;
 				
 				int IRUvalue =G_IRU(G_IRU);
-				int G_ITM_AGE2Value =G_ITM_AGE2(G_ITM_AGE2);
-				int G_MFG_BND_NMValue = 	G_MFG_BND_NM(G_MFG_BND_NM);	 
+//				int G_ITM_AGE2Value =G_ITM_AGE2(G_ITM_AGE2);
+//				int G_MFG_BND_NMValue = 	G_MFG_BND_NM(G_MFG_BND_NM);	 
 				
 				int _DM_BAD  = 0;
 				//*** Check _95930 for missing values ; 

@@ -18,7 +18,8 @@ import org.apache.poi.ss.usermodel.Row;
 
 public class ReadHistoryData {
   public static MyCustomClass ReadData(String _format) throws IOException{
-
+	  if(Calculate_All_Dryer_info.visited >0) return Calculate_All_Dryer_info.Agentinput;
+		  
 	  _format =_format.replaceAll("\\W_", " ");
       _format =_format.replaceAll("NDCS", "");
 	  _format =_format.replaceAll("DCS", "");
@@ -144,7 +145,9 @@ public class ReadHistoryData {
 	}
 	               
 	
-	  
+	Calculate_All_Dryer_info.visited ++;
+	Calculate_All_Dryer_info.Agentinput=container;
 	  return container;
+	 
   }
 }
