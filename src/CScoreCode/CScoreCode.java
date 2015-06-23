@@ -1,6 +1,7 @@
 package CScoreCode;
 
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
@@ -13,26 +14,58 @@ public class CScoreCode {
 		long startTime = System.currentTimeMillis();
 		//Map<String, Double> results = Calculate_All_Dryer_info.Calculate_All_Dryer_info("4766_I", "12", "D", "GE", "IW","NOT COMPLETING CYCLE");
 		Map<String, Double> results = Calculate_All_Dryer_info.Calculate_All_Dryer_infomation("4766_E", "20", "1", "SEARS","IW", "NOT HEATING NOT TURNING");
-		double max = Collections.max(results.values());
+		/*double max = Collections.max(results.values());
+		Map<String, Double> top3 = new  HashMap<String, Double>();
 		Set<String> keys = new HashSet<String>();
-	      
+		Map<String, Double> results2 = new  HashMap<String, Double>();
+		Map<String, Double> results3 = new  HashMap<String, Double>();
+		
         for(Map.Entry entry: results.entrySet()){
             if(entry.getValue().equals(max)){
                 keys.add((String) entry.getKey()); //no break, looping entire hashtable
+               
+                top3.put(entry.getKey().toString(), max);
+                
+               
             }
+            else
+            	results2.put(entry.getKey().toString(), (Double) entry.getValue());
         }
+        
+        if(top3.size() <3){
+        	double max1 = Collections.max(results2.values());
+        	 for(Map.Entry entry: results.entrySet()){
+                 if(entry.getValue().equals(max1)){               
+                     top3.put(entry.getKey().toString(), max1);
+                    
+                 }else{
+                	 if(entry.getValue().equals(max) == false)
+                	 results3.put(entry.getKey().toString(), (Double) entry.getValue());
+                 }
+             }
+        }
+        
+        if(top3.size() <3){
+        	double max2 = Collections.max(results3.values());
+        	 for(Map.Entry entry: results3.entrySet()){
+                 if(entry.getValue().equals(max2)){               
+                     top3.put(entry.getKey().toString(), max2);
+                     
+                 }
+             }
+        }*/
         
         long endTime   = System.currentTimeMillis();
        	long totalTime = endTime - startTime;
     	System.out.println("\n"+totalTime);
 
-    	System.out.print("value is  " + max); 
-    	System.out.print("\n\n  key(s)  " + keys); 
-    	
+    /*	System.out.print("value is  " + max); 
+    	System.out.print("\n\n  key(s)  " + keys); */
+    	System.out.print("\n\n  top3 are   " + results); 
  
 		//String maxkey = results.
 		double Vvalue = Calculate_35720_Dryer_Info.Calculate_35720_Dryer("4766_E", "3", "W", "BOSCH", "NOT DRAINING THE CLOTHES");
-		System.out.print("\n \n value is  " + Vvalue); 
+		//System.out.print("\n \n value is  " + Vvalue); 
 		/*double Vvalue1 = Calculate_35720_Dryer_Info.Calculate_35720_Dryer("9663_A", "1", "1", "KENMORE", "DRYER DRUM NOT TURNING MAKING HUMMING NOISE");
 		System.out.print("\n value is  " + Vvalue1); 
 		double Vvalue2 = Calculate_35720_Dryer_Info.Calculate_35720_Dryer("4766_I", "12", "D", "GE", "NOT COMPLETING CYCLE");

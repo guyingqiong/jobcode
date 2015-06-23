@@ -1,6 +1,9 @@
 package CScoreCode;
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 
 
 public class Calculate_All_Dryer_info {
@@ -59,7 +62,48 @@ public class Calculate_All_Dryer_info {
 			results.put("93950", Calculate_93950_Dryer_Info.Calculate_93950_Dryer(G_IRU, G_ITM_AGE2, G_MDL_NO, G_MFG_BND_NM, Word_Bank));
 			Calculate_All_Dryer_info.visited =0;
 			
-			return results;
+			double max = Collections.max(results.values());
+			Map<String, Double> top3 = new  HashMap<String, Double>();
+			Set<String> keys = new HashSet<String>();
+			Map<String, Double> results2 = new  HashMap<String, Double>();
+			Map<String, Double> results3 = new  HashMap<String, Double>();
+			
+	        for(Map.Entry entry: results.entrySet()){
+	            if(entry.getValue().equals(max)){
+	                keys.add((String) entry.getKey()); //no break, looping entire hashtable
+	               
+	                top3.put(entry.getKey().toString(), max);
+	                
+	               
+	            }
+	            else
+	            	results2.put(entry.getKey().toString(), (Double) entry.getValue());
+	        }
+	        
+	        if(top3.size() <3){
+	        	double max1 = Collections.max(results2.values());
+	        	 for(Map.Entry entry: results.entrySet()){
+	                 if(entry.getValue().equals(max1)){               
+	                     top3.put(entry.getKey().toString(), max1);
+	                    
+	                 }else{
+	                	 if(entry.getValue().equals(max) == false)
+	                	 results3.put(entry.getKey().toString(), (Double) entry.getValue());
+	                 }
+	             }
+	        }
+	        
+	        if(top3.size() <3){
+	        	double max2 = Collections.max(results3.values());
+	        	 for(Map.Entry entry: results3.entrySet()){
+	                 if(entry.getValue().equals(max2)){               
+	                     top3.put(entry.getKey().toString(), max2);
+	                     
+	                 }
+	             }
+	        }
+	        return top3;
+			//return results;
 		}
 		
 }

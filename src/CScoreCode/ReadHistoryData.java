@@ -43,7 +43,10 @@ public class ReadHistoryData {
 	  //..
 	  FileInputStream file;
 	try {
-		file = new FileInputStream(new File("/dryerjobcoder/jobcode.xls"));
+		//file = new FileInputStream(new File("/dryerjobcoder/jobcode.xls"));
+		//Get file from resources folder
+		file = new FileInputStream("jobcode.xls");
+		
 		  //Get the workbook instance for XLS file 
 		  HSSFWorkbook workbook = new HSSFWorkbook(file);
 		   
